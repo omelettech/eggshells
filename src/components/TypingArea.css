@@ -1,0 +1,52 @@
+
+.input-form {
+    height: 75px;
+    width: 800px;
+    max-width: 95vw;
+    margin: 50px auto 0px;
+    text-align: center;
+    line-height: 75px;
+    overflow: hidden;
+    display: flex;
+    font-size: 1.75rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 60px #d5d5d5;
+}
+.input-field-wrapper {
+    width: 50%;
+    text-align: right;
+}
+.input-field {
+    display: inline;
+    text-align: right;
+    float: right;
+    min-width: 1px;
+    color: green;
+    white-space: nowrap;
+}
+.words-list {
+    width: 50%;
+    text-align: left;
+}
+.input-field:focus {
+    outline: none;
+}
+
+.word {
+    padding-right: 10px;
+}
+.wrong {
+    text-decoration: line-through crimson;
+    color: crimson;
+}
+.completed {
+    color: grey;
+    text-align: right;
+    white-space: nowrap;
+}
+.completed-wrong {
+    text-decoration: line-through grey;
+    color: grey;
+    text-align: right;
+    white-space: nowrap;
+}
