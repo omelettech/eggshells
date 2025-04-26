@@ -22,7 +22,6 @@ interface InputProps {
 const TypingArea: FC<InputProps> = ({ signalStart, setStats, time }) => {
     const textInputRef = useRef<HTMLDivElement|null>(null);
     const targetWordRef = useRef<HTMLSpanElement|null>(null);
-
     const initialTargetWords: string[] = ["hello","World"];
     const [targetWords, setTargetWords] = useState<string[]>(initialTargetWords);
     const [currentTarget, setCurrentTarget] = useState<string>(initialTargetWords[0]);
@@ -39,6 +38,7 @@ const TypingArea: FC<InputProps> = ({ signalStart, setStats, time }) => {
         const numOfCharsEntered = userInput.trim().length;
         if (currentTarget && targetWordRef.current) {
             if (userInput === currentTarget.slice(0, numOfCharsEntered)) {
+                console.log(currentTarget)
                 targetWordRef.current.textContent = currentTarget.slice(numOfCharsEntered);
                 setWrongInput(false);
             } else {
@@ -51,6 +51,9 @@ const TypingArea: FC<InputProps> = ({ signalStart, setStats, time }) => {
         focusInput();
     }, []);
 
+    useEffect(() => {
+        console.log(completedWords)
+    }, [completedWords]);
     const submitWord = (e: KeyboardEvent<HTMLDivElement>): void => {
         signalStart();
         if (e.key === " " || e.key === "Enter") {
